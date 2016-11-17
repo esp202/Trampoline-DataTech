@@ -1,0 +1,20 @@
+{% extends 'athlete/base.html' %}
+
+
+{% block body %}
+    <div id="sidebar-wrapper">
+    {% if object_list %}
+            <ul class="sidebar-nav">
+                {% for athletes in object_list %}
+                    <li><a href=" {% url 'athlete:athleteinfo' athletes.id %}">{{ athletes }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% else %}
+        <h2>Please add athletes to the Database</h2>
+    {% endif %}
+    <!-- Menu toggle script -->
+
+{% endblock %}
+
+
